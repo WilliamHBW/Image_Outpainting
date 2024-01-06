@@ -13,18 +13,16 @@
             <input type="file" id="image-upload" required style="display: none;">
             <input type="number" id="height" placeholder="输入高度" required>
             <input type="number" id="width" placeholder="输入宽度" required>
+            <input type="number" id="steps" placeholder="输入步数" min="1" required>
             <button type="submit" class="custom-file-upload">开始调整</button>
         </div>
     </form>
     <div id="original">
-        <h2>原图片</h2>
         <!-- Original image will be displayed here -->
     </div>
     <div id="result">
-        <h2>生成图片</h2>
         <!-- Processed image will be displayed here -->
     </div>
-    <div id="loading-bar" style="width:0%; height:20px; background-color:#00f;"></div>
     <script src="/static/scripts/app.js"></script>
 </body>
 </html>

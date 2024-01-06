@@ -6,7 +6,7 @@ import utils.img_utils as iu
 
 device = torch.device('cuda') if torch.cuda.is_available() else torch.device('cpu') 
 
-def resize_image(img, width, height):
+def resize_image(img, width, height, steps):
     # define parameters
     target_res = (height, width)#[H,W]
     upscale_factor = 2
@@ -46,7 +46,7 @@ def resize_image(img, width, height):
         print("Using CPU")
         pipe = DiffusionPipeline.from_pretrained("runwayml/stable-diffusion-inpainting").to('cpu')
 
-    cur_images = pipe(prompt=prompt, image=init_image_, mask_image=mask_image_, height=down_res[0], width=down_res[1], num_inference_steps=1, num_images_per_prompt=5).images
+    cur_images = pipe(prompt=prompt, image=init_image_, mask_image=mask_image_, height=down_res[0], width=down_res[1], num_inference_steps=steps, num_images_per_prompt=5).images
 
     idx = 0
     

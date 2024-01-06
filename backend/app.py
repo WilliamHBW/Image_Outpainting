@@ -16,12 +16,13 @@ def upload_image():
     file = request.files['image']
     width = int(request.form['width'])
     height = int(request.form['height'])
+    steps = int(request.form['steps'])
 
     # Open the uploaded image with Pillow
     img = Image.open(file)
 
     # Generate multiple images
-    images = resize_image(img, width, height)
+    images = resize_image(img, width, height, steps)
 
     # Convert images to base64 and save them as JPEG
     base64_images = []

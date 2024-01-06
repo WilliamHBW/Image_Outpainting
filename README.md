@@ -9,30 +9,18 @@ Combining LLMs for image outpainting automatically. Serves as the backend softwa
 - see requirements.py
 
 ## File Structure
-The project has the following structure:
 
-- `__pycache__/`
-- `log_file`
-- `main.py`
-- `requirements.txt`
-- `README.md`
-- `models/`
-  - `ESRGAN/`
-  - `blip-image-captioning-large/`
-  - `stable-diffusion-inpainting/`
-- `results/`
-- `test/`
-- `utils/`
-  - `image_processor.py`
-  
 ## Models
 
 Put all models in models/.
 
 - Prompt Generation: blip-image-captioning-large
 - Image Outpainting: stable-diffusion-inpainting
-- Image Super-resolution:ESRGAN
+- Image Super-resolution:pillow resize
 
 ## Test
-```shell script
-python main.py
+
+## TODO
+- solve upscale factor bug when input resolution is not in the range.
+- use unconditional image-to-text model instead of conditioned.
+- allow users to choose which LLM model they want to use for outpainting and image-to-text.
