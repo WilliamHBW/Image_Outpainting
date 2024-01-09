@@ -6,4 +6,6 @@ backend/__pycache__/
 backend/utils/__pycache__/
 backend/.DS_Store
 backend/utils/.DS_Store
+data/
+models/
 
